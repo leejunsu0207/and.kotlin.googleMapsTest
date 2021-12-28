@@ -59,6 +59,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
 //        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
 
+
+
         val cameraPosition = CameraPosition.Builder()
             .target(LATLNG)
             .zoom(15.0f)
@@ -79,7 +81,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             bitmapDrawable = resources.getDrawable(R.drawable.dog) as BitmapDrawable
         }
 
-        var discriptor = BitmapDescriptorFactory.fromBitmap(bitmapDrawable.bitmap)
+        var scaledBitmap = Bitmap.createScaledBitmap(bitmapDrawable.bitmap, 50, 50, false)
+
+        var discriptor = BitmapDescriptorFactory.fromBitmap(scaledBitmap)
         val markerOptions = MarkerOptions()
             .position(LATLNG)
             .icon(discriptor)
