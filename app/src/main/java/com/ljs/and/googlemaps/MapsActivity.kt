@@ -81,6 +81,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             bitmapDrawable = resources.getDrawable(R.drawable.dog) as BitmapDrawable
         }
 
+        // 이미지 사이즈 줄여줌
         var scaledBitmap = Bitmap.createScaledBitmap(bitmapDrawable.bitmap, 50, 50, false)
 
         var discriptor = BitmapDescriptorFactory.fromBitmap(scaledBitmap)
